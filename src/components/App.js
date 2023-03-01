@@ -1,13 +1,28 @@
-import React, { useState } from "react";
-import './../styles/App.css';
+import React, { Component, useState } from "react";
+import "./../styles/App.css";
 
-const App = (props) => {
+function App() {
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div className="App" id="main">
-      // Do not alter the main div
+    <div id="main">
+      {isClicked && (
+        <p id="para">
+          Hello, I've learnt to use the full-stack evaluation tool. This makes
+          me so happy
+        </p>
+      )}
+      <button
+        id="click"
+        onClick={() => {
+          setIsClicked(true);
+        }}
+      >
+        Click me
+      </button>
+      {/* Do not alter the main div */}
     </div>
   );
 }
 
-export default App
+export default App;
